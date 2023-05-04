@@ -324,49 +324,48 @@ h6{
   background-color: #d599fe;
 }
 
-/*inspo*/
-      .gallery {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-        -webkit-column-width: 33%;
-        -moz-column-width: 33%;
-        column-width: 33%; 
-      }
-        .gallery .pics {
-        -webkit-transition: all 350ms ease;
-        transition: all 350ms ease; 
-      }
-        .gallery .animation {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1); 
-      }
+.gallery {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%; 
+}
+  #small-container .gallery {
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease; 
+}
+  .gallery .animation {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); 
+}
 
-      @media (max-width: 450px) {
-        .gallery {
-          -webkit-column-count: 1;
-          -moz-column-count: 1;
-          column-count: 1;
-          -webkit-column-width: 100%;
-          -moz-column-width: 100%;
-          column-width: 100%;
-        }
-      }
+@media (max-width: 450px) {
+  .gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+  }
+}
 
-      @media (max-width: 400px) {
-        .btn.filter {
-          padding-left: 1.1rem;
-          padding-right: 1.1rem;
-        }
-      }
-      button.close {
-        position: absolute;
-        right: 0;
-        z-index: 2;
-        padding-right: 1rem;
-        padding-top: .6rem;
-      }
+@media (max-width: 400px) {
+  .btn.filter {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+}
+button.close {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  padding-right: 1rem;
+  padding-top: .6rem;
+}
 
       .bg-image {
         background-image: url('./images/background.png');
@@ -387,3 +386,46 @@ h6{
       .card-content{
       background-color: var(--light-purple);
       }
+
+      .filterDiv {
+        float: left;
+        width: 100%;
+        line-height: 100px;
+        text-align: center;
+        margin: 2px;
+        display: none; /* Hidden by default */
+      }
+            
+      /* The "show" class is added to the filtered elements */
+      .show {
+        display: block;
+      }
+      
+      /* Container needed to position the overlay. Adjust the width as needed */
+      #small-container .gallery{
+        position: relative;
+        width: 200%;
+        max-width: 450px;
+      }
+      
+            /* The overlay effect - lays on top of the container and over the image */
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5); /* Black see-through */
+        color: #f1f1f1;
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      /* When you mouse over the container, fade in the overlay title */
+      #small-container:hover .overlay {
+        opacity: 1;
+      }
+      
